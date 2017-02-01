@@ -1,0 +1,8 @@
+//.gitignore
+/node_modules/*
+/ios/*
+/android/*
+/tests/*
+/build/*
+/.vscode/*
+/.DS_Store

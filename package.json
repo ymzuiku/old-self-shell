@@ -1,0 +1,26 @@
+{
+  "name": "self-shell",
+  "version": "1.0.0",
+  "description": "self quick shell, use ShellJS, yargs",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ymzuiku/self-shell.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ymzuiku/self-shell/issues"
+  },
+  "homepage": "https://github.com/ymzuiku/self-shell#readme",
+  "bin": {
+    "s": "index.js"
+  },
+  "dependencies": {
+    "shelljs": "^0.7.6",
+    "yargs": "^6.6.0"
+  }
+}
