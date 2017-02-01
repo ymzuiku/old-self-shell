@@ -17,13 +17,16 @@ const open = ()=>{
 	exec('open .')
 }
 const save = ()=>{
-	rm('-r', `${projectDir}/*`)
-	rm('-r', `${projectDir}/.*`)
+	cd(dir)
+	rm('-r', project)
+	mkdir(project)
+
 	let life = `~/Library/Preferences/Adobe Photoshop CC 2017 Settings`
 	cd(life)
-	rm('-r', 'Materials.psp')
-	rm('-r', 'PluginCache.psp')
+	// rm('-r', 'Materials.psp')
+	// rm('-r', 'PluginCache.psp')
 	exec(`zip -r ${projectDir}/photoshop.zip ./`)
+
 	let life2 = `~/Library/Preferences/Adobe Illustrator 21 Settings`
 	cd(life2)
 	rm('-r', 'AIMenuFaceCache')
@@ -45,8 +48,8 @@ const restore = ()=>{
 
 	let life2 = `~/Library/Preferences/Adobe Illustrator 21 Settings`
 	cd(life2)
-	rm('-r', `${life}/*`)
-	rm('-r', `${life}/.*`)	
+	rm('-r', `${life2}/*`)
+	rm('-r', `${life2}/.*`)	
 	exec(`unzip -o -d ./ ${projectDir}/illustrator.zip`)
 }
 
@@ -58,7 +61,7 @@ if (argv.o === project || argv.o === 'all') {
 	console.log(`save ${project}...`)
 	save()
 	console.log('------ Done ------')
-} else if (argv.r === project || argv.s === 'all') {
+} else if (argv.r === project || argv.r === 'all') {
 	console.log(`restore ${project}...`)
 	restore()
 	console.log('------ Done ------')

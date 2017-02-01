@@ -6,3 +6,4 @@ let pwd = process.cwd()
 let str = process.argv[2]
 
 require('./src/backup.js')
+require('./src/atlas.js')

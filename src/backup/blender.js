@@ -15,8 +15,10 @@ const open = ()=>{
 	exec('open .')
 }
 const save = ()=>{
-	rm('-r', `${projectDir}/*`)
-	rm('-r', `${projectDir}/.*`)
+	cd(dir)
+	rm('-r', project)
+	mkdir(project)
+	
 	let life = `~/Library/Application Support`
 	cd(life)
 	rm('-r', './Blender/2.78/cache')
@@ -40,7 +42,7 @@ if (argv.o === project || argv.o === 'all') {
 	console.log(`save ${project}...`)
 	save()
 	console.log('------ Done ------')
-} else if (argv.r === project || argv.s === 'all') {
+} else if (argv.r === project || argv.r === 'all') {
 	console.log(`restore ${project}...`)
 	restore()
 	console.log('------ Done ------')
