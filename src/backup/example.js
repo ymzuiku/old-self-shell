@@ -16,15 +16,17 @@ const open = ()=>{}
 const save = ()=>{}
 const restore = ()=>{}
 
-if (argv.o === project || argv.o === 'all') {
+if(str[4]) {
+	console.log('error')
+} else if (str[2] === 'o' && (str[3] === project || str[3] === 'all')) {
 	console.log(`open ${project}...`)
 	open()
 	console.log('------ Done ------')
-} else if (argv.s === project || argv.s === 'all') {
+} else if (str[2] === 's' && (str[3] === project || str[3] === 'all'))  {
 	console.log(`save ${project}...`)
 	save()
 	console.log('------ Done ------')
-} else if (argv.r === project || argv.r === 'all') {
+} else if (str[2] === 'r' && (str[3] === project || str[3] === 'all'))  {
 	console.log(`restore ${project}...`)
 	restore()
 	console.log('------ Done ------')

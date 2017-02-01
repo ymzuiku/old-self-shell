@@ -3,7 +3,7 @@ let fs = require('fs')
 require('shelljs/global')
 let argv = require('yargs').argv
 let pwd = process.cwd()
-let str = process.argv[2]
+let str = process.argv
 
 let dir = `${__dirname}/../../backup`
 let project = 'km'
@@ -32,15 +32,31 @@ const restore = ()=>{
 	exec(`unzip -o -d ./ ${projectDir}/km.zip`)
 }
 
-if (argv.o === project || argv.o === 'all') {
+// if (argv.o === project || argv.o === 'all') {
+// 	console.log(`open ${project}...`)
+// 	open()
+// 	console.log('------ Done ------')
+// } else if (argv.s === project || argv.s === 'all') {
+// 	console.log(`save ${project}...`)
+// 	save()
+// 	console.log('------ Done ------')
+// } else if (argv.r === project || argv.r === 'all') {
+// 	console.log(`restore ${project}...`)
+// 	restore()
+// 	console.log('------ Done ------')
+// }
+
+if(str[4]) {
+	console.log('error')
+} else if (str[2] === 'o' && (str[3] === project || str[3] === 'all')) {
 	console.log(`open ${project}...`)
 	open()
 	console.log('------ Done ------')
-} else if (argv.s === project || argv.s === 'all') {
+} else if (str[2] === 's' && (str[3] === project || str[3] === 'all'))  {
 	console.log(`save ${project}...`)
 	save()
 	console.log('------ Done ------')
-} else if (argv.r === project || argv.r === 'all') {
+} else if (str[2] === 'r' && (str[3] === project || str[3] === 'all'))  {
 	console.log(`restore ${project}...`)
 	restore()
 	console.log('------ Done ------')
