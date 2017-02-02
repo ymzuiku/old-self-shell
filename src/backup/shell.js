@@ -22,14 +22,17 @@ const save = ()=>{
 	// exec(`zip -r ${projectDir}/Blender.zip Blender`)
 	cp('-r', '.bash_profile', projectDir)
 	cp('-r', '.gitconfig', projectDir)
+	cp('-r', '.vimrc', projectDir)
 }
 const restore = ()=>{
 	let life = `~/Library/Application Support`
 	rm('-r', `~/.bash_profile`)
 	rm('-r', `~/.gitconfig`)
+	rm('-r', `~/.vimrc`)
 	cd(`~/`)
 	cp('-r', `${projectDir}/.bash_profile`, `~/.`)
 	cp('-r', `${projectDir}/.gitconfig`, `~/.`)
+	cp('-r', `${projectDir}/.vimrc`, `~/.`)
 }
 
 if(str[4]) {
