@@ -14,6 +14,9 @@ if (str[2] ==='v'  && !str[3]) {
 	cd : 显示slef-shell的路径
 	ls : 显示shelf-shell的文件
 	self push : push self-shell到github
+	s s <name/all> : save某个项目的配置到库中(all标示所有)
+	s r <name/all> : restore某个项目的配置到库中(all标示所有)
+	s o <name/all> : open某个项目的配置到库中(all标示所有)
 	`)
 }
 
@@ -25,34 +28,4 @@ if (str[2] === 'k' && !str[3]) {
 	console.log(__dirname)
 } else if (str[2] === 'ls' && !str[3]) {
 	exec(`ls ${__dirname}/..`)
-}
-
-if(str[2] === 'self' && str[3] === 'push') {
-	console.log('正在push <self-shell> 到github')
-	if(!str[4]) {
-		cd(__dirname)
-		exec('git add .')
-		exec('git cmm')
-		exec('git pusha')
-	} else {
-		cd(__dirname)
-		exec('git add .')
-		exec(`git cm ${str[4]}`)
-		exec('git pusha')
-	}
-}
-
-if(str[2] === 'self' && str[3] === 'push') {
-	console.log('正在push到github')
-	if(!str[4]) {
-		cd(pwd)
-		exec('git add .')
-		exec('git cmm')
-		exec('git pusha')
-	} else {
-		cd(pwd)
-		exec('git add .')
-		exec(`git cm ${str[4]}`)
-		exec('git pusha')
-	}
 }
