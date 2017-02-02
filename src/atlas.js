@@ -5,19 +5,26 @@ let argv = require('yargs').argv
 let pwd = process.cwd()
 let str = process.argv
 
+
+if (str[2] ==='v'  && !str[3]) {
+	console.log(`
+	k : pkill node
+	code : 使用code打开self-shell项目
+	ar : 覆盖模式的a命令
+	cd : 显示slef-shell的路径
+	ls : 显示shelf-shell的文件
+	self push : push self-shell到github
+	`)
+}
+
 if (str[2] === 'k' && !str[3]) {
 	exec('pkill node')
 } else if (str[2] === 'code' && !str[3]) {
 	exec(`code ${__dirname}/..`)
 } else if (str[2] === 'cd' && !str[3]) {
 	console.log(__dirname)
-	exec(`cd ${__dirname}`)
 } else if (str[2] === 'ls' && !str[3]) {
-	exec(`ls ${__dirname}`)
-} else if (str[2] === 'git' && str[3]==='push') {
-	exec(`git add .`)
-	exec(`git add cm 'shell atlas quick push'`)
-	exec(`git pusha`)
+	exec(`ls ${__dirname}/..`)
 }
 
 if(str[2] === 'self' && str[3] === 'push') {
