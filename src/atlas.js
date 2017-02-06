@@ -29,3 +29,26 @@ if (str[2] === 'k' && !str[3]) {
 } else if (str[2] === 'ls' && !str[3]) {
 	exec(`ls ${__dirname}/..`)
 }
+
+if(str[2] === 'ns') {
+	console.log('ifconfig en0')
+	let ipstr = exec('npm start')
+}
+
+
+if(str[2] === 'ip') {
+	console.log('ifconfig en0')
+	let ipstr = exec('ifconfig en0')
+}
+
+if(str[3]==='bash') {
+	exec(`${str[2]} ~/.bash_profile`)
+}
+
+if(str[3]==='vim') {
+	exec(`${str[2]} ~/.vimrc`)
+}
+
+if(str[3]==='git') {
+	exec(`${str[2]} ~/.gitconfig`)
+}
