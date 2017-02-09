@@ -39,6 +39,14 @@ else if (str[2] === 'cd' && str[3] === 'git') {
 	console.log('------ git push end ------')
 }
 
+else if (str[2] === '.' && str[3] === 'git') {
+	cd(`${__dirname}`)
+	exec(`git add .`)
+	exec(`git commit --no-verify -am 'quick commit -am'`)
+	exec(`git push --all`)
+	console.log('------ git push end ------')
+}
+
 if(str[2] === 'ns') {
 	console.log('ifconfig en0')
 	let ipstr = exec('npm start')
