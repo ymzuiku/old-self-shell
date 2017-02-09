@@ -17,3 +17,4 @@
     pusha = push --all
     pulla = pull --all
     clone-git = clone git@git.oschina.net:ymdesign/git-hello-world
+    rc = git rm -r --cached
