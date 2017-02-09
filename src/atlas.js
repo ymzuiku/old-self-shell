@@ -40,7 +40,6 @@ else if (str[2] === 'cd' && str[3] === 'git') {
 }
 
 else if (str[2] === '.' && str[3] === 'git') {
-	cd(`${__dirname}`)
 	exec(`git add .`)
 	exec(`git commit --no-verify -am 'quick commit -am'`)
 	exec(`git push --all`)
